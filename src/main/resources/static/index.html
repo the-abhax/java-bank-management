@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Banking Management System</title>
+    <style>
+        :root { color-scheme: dark; font-family: Inter, system-ui, sans-serif; }
+        * { box-sizing: border-box; }
+        body { margin: 0; min-height: 100vh; display: grid; place-items: center; background: #07111f; color: #e8eef8; }
+        main { width: min(880px, calc(100% - 32px)); padding: 40px; border: 1px solid #243752; border-radius: 18px; background: #0d1b2e; box-shadow: 0 24px 70px #0008; }
+        .status { display: inline-flex; gap: 8px; align-items: center; padding: 7px 12px; border-radius: 999px; background: #123d31; color: #88e5bd; font-weight: 700; }
+        .dot { width: 9px; height: 9px; border-radius: 50%; background: #39d98a; box-shadow: 0 0 12px #39d98a; }
+        h1 { margin: 22px 0 10px; font-size: clamp(2rem, 6vw, 4rem); line-height: 1; }
+        p { color: #aebed3; line-height: 1.6; }
+        table { width: 100%; border-collapse: collapse; margin-top: 26px; }
+        th, td { padding: 13px 10px; text-align: left; border-bottom: 1px solid #243752; }
+        th { color: #8da5c4; font-size: .8rem; text-transform: uppercase; letter-spacing: .08em; }
+        code { color: #9dc5ff; }
+        footer { margin-top: 24px; color: #71849f; font-size: .9rem; }
+        @media (max-width: 600px) { main { padding: 24px; } th:nth-child(3), td:nth-child(3) { display: none; } }
+    </style>
+</head>
+<body>
+<main>
+    <span class="status"><span class="dot"></span> Backend is running</span>
+    <h1>Banking API</h1>
+    <p>The Spring Boot banking service is ready on port 8080. Use the REST endpoints below from your frontend or an API client.</p>
+    <table>
+        <thead><tr><th>Method</th><th>Endpoint</th><th>Purpose</th></tr></thead>
+        <tbody>
+        <tr><td>POST</td><td><code>/api/auth/register</code></td><td>Register a user</td></tr>
+        <tr><td>POST</td><td><code>/api/auth/login</code></td><td>Log in</td></tr>
+        <tr><td>POST</td><td><code>/api/accounts</code></td><td>Open an account</td></tr>
+        <tr><td>GET</td><td><code>/api/accounts?email=...</code></td><td>Find an account</td></tr>
+        <tr><td>POST</td><td><code>/api/accounts/{id}/credit</code></td><td>Credit money</td></tr>
+        <tr><td>POST</td><td><code>/api/accounts/{id}/debit</code></td><td>Debit money</td></tr>
+        <tr><td>POST</td><td><code>/api/accounts/{id}/transfer</code></td><td>Transfer money</td></tr>
+        </tbody>
+    </table>
+    <footer>Banking Management System · Spring Boot</footer>
+</main>
+</body>
+</html>
