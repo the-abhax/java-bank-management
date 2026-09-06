@@ -1,0 +1,19 @@
+CREATE DATABASE IF NOT EXISTS banking_system;
+USE banking_system;
+
+CREATE TABLE IF NOT EXISTS users (
+    user_id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    password VARCHAR(100) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS Accounts (
+    account_number BIGINT PRIMARY KEY,
+    full_name VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    balance DECIMAL(19,2) NOT NULL DEFAULT 0.00,
+    security_pin VARCHAR(100) NOT NULL,
+    version BIGINT DEFAULT 0,
+    CONSTRAINT fk_user_email FOREIGN KEY (email) REFERENCES users(email) ON DELETE CASCADE
+);
