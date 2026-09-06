@@ -25,6 +25,14 @@ Spring/JPA creates or updates the schema on startup. Existing users and accounts
 .\mvnw.cmd spring-boot:run
 ```
 
+For a credential-free local demo with a temporary in-memory database:
+
+```powershell
+.\run-springboot.ps1 -Local
+```
+
+Data in the local demo database is cleared when the application stops.
+
 The API starts at `http://localhost:8080`.
 
 ## API
